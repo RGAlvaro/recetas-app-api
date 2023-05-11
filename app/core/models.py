@@ -8,7 +8,11 @@ from django.contrib.auth.models import (
     PermissionsMixin,
 )
 
-""" Redefiniendo la clase BaseUserManager de django a nuestro gusto"""
+
+""" Redefiniendo la clase BaseUserManager
+ de django a nuestro gusto"""
+
+
 class UserManager(BaseUserManager):
     """Manager for users."""
 
