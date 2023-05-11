@@ -8,7 +8,8 @@ from django.contrib.auth.models import (
     PermissionsMixin,
 )
 
-class UserManager(BaseUserManager): #redefiniendo la clase BaseUserManager de django a nuestro gusto
+""" Redefiniendo la clase BaseUserManager de django a nuestro gusto"""
+class UserManager(BaseUserManager):
     """Manager for users."""
 
     def create_user(self, email, password=None, **extra_fields):
@@ -24,7 +25,7 @@ class UserManager(BaseUserManager): #redefiniendo la clase BaseUserManager de dj
     def create_superuser(self, email, password):
         """Create and return a new superuser."""
         user = self.create_user(email, password)
-        user.is_staff= True
+        user.is_staff = True
         user.is_superuser = True
         user.save(using=self._db)
 
